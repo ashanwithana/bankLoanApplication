@@ -1,28 +1,38 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" >Logo</a>
+    <a class="navbar-brand">Logo</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="mynavbar">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="bankerList" >Banker List</a>
+          <a class="nav-link" routerLink="bankerList">Banker List</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="customerList" >Customer List</a>
+          <a class="nav-link" routerLink="customerList">Customer List</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="loanApplicationList" >Loan Application List</a>
+          <a class="nav-link" routerLink="loanApplicationList">Loan Application List</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="newLoan" >Loan Request</a>
+          <a class="nav-link" routerLink="newLoan">Loan Request</a>
         </li>
       </ul>
+      @if(loggedUserData){
       <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search">
-        <button class="btn btn-primary" routerLink="login" type="button">Login</button>
+        <button class="btn btn-primary" (click)="onLogout()" type="button">
+          Logout
+        </button>
       </form>
+      }@else {
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search" />
+        <button class="btn btn-primary" routerLink="login" type="button">
+          Login
+        </button>
+      </form>
+      }
     </div>
   </div>
 </nav>
