@@ -19,7 +19,7 @@
           <a class="nav-link" routerLink="newLoan">Loan Request</a>
         </li>
       </ul>
-      @if(loggedUserData){
+      @if(this.commonService.loggedUserData){
       <form class="d-flex">
         <button class="btn btn-primary" (click)="onLogout()" type="button">
           Logout

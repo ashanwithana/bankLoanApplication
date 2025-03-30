@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
+import { CommonService } from './services/common.service';
 
 @Component({
   selector: 'app-root',
@@ -13,11 +14,13 @@ export class AppComponent {
   loggedUserData:any;
   redirector = inject(Router);
 
+  commonService = inject(CommonService);
+
   constructor(){
-    const loggedData = sessionStorage.getItem("BankUser");
-    if(loggedData){
-      this.loggedUserData = JSON.parse(loggedData);
-    }
+    // const loggedData = sessionStorage.getItem("BankUser");
+    // if(loggedData){
+    //   this.loggedUserData = JSON.parse(loggedData);
+    // }
   }
 
   onLogout() {
