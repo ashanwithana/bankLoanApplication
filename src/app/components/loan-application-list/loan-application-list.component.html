@@ -19,6 +19,7 @@
                 <td><i class="bi bi-file-earmark-check-fill"></i> Application Status</td>
                 <td><i class="bi bi-archive-fill"></i> Assets</td>
                 <td><i class="bi bi-tools"></i> Actions</td>
+                <td><i class="bi bi-tools"></i> Status</td>
             </tr>
         </thead>
         <tbody>
@@ -48,6 +49,14 @@
                     </div>
 
 
+                </td>
+                <td>
+                    <select [value]="item.applicationStatus" (change)="setStatus($event,item.panCard)">
+                        <option value="New">New</option>
+                        <option value="Approved">Approved</option>
+                        <option value="Rejected">Rejected</option>
+                        <option value="On Hold">On Hold</option>
+                    </select>
                 </td>
             </tr>
             }

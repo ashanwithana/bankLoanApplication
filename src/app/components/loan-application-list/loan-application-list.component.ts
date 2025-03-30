@@ -33,4 +33,15 @@ export class LoanApplicationListComponent {
       this.applicationList = res.data;
     })
   }
+
+  setStatus(event : any, panNo: string) {
+    debugger;
+    this.commonService.getApplicationStatus(panNo,event.target.value).subscribe((res:IApiResponse)=>{
+      if(res.result){
+        alert("Status Updated Successfully");
+      }else{
+        alert(res.message);
+      }
+    })
+  }
 }

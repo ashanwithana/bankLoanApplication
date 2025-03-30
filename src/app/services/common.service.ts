@@ -27,4 +27,7 @@ loggedUserData! :  IUser;
   getApplicationAssigned(bankerId: number) {
     return this.http.get<IApiResponse>('https://projectapi.gerasim.in/api/BankLoan/GetApplicationAssigneedToMe?bankerId=' + bankerId);
   }
+  getApplicationStatus(panNo: string, status: string) {
+    return this.http.get<IApiResponse>('https://projectapi.gerasim.in/api/BankLoan/CheckApplicationStatus?panNo='+panNo+'&status='+status);
+  }
 }
